@@ -1,7 +1,7 @@
 import React from "react";
 import { styled } from "../../stitches.config";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
-import { Cross1Icon } from "@radix-ui/react-icons";
+// import { Cross1Icon } from "@radix-ui/react-icons";
 // import { overlayStyles } from "./Overlay";
 import { panelStyles } from "../Panel";
 import { IconButton } from "../IconButton";
@@ -62,7 +62,7 @@ export const DialogContent =
         onClick={() => onClose()}
         variant="ghost"
       >
-        <Cross1Icon />
+        {/* <Cross1Icon /> */}
       </DialogPrimitive.Close>
     </StyledContent>
   ));

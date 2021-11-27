@@ -141,8 +141,9 @@ const StyledTextField = styled(DEFAULT_TAG, {
   },
 });
 
-export const TextField = React.forwardRef((props, forwardedRef) => {
-  return <StyledTextField {...props} ref={forwardedRef} />;
-});
-
-TextField.toString = () => `.${StyledTextField.className}`;
+export const TextField = () =>
+  React.forwardRef <
+  HTMLInputElement >
+  ((props, forwardedRef) => {
+    return <StyledTextField {...props} ref={forwardedRef} />;
+  });
