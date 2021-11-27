@@ -1,7 +1,7 @@
 import { styled } from "../stitches.config";
 import { Button } from "../components/Button";
 import { TextField } from "./TextField";
-import { Select } from "../components/Select";
+// import { Select } from "../components/Select";
 
 export const ControlGroup = styled("div", {
   display: "flex",
@@ -72,32 +72,32 @@ export const ControlGroup = styled("div", {
       },
     },
   },
-  [`& ${Select}`]: {
-    borderRadius: 0,
-    boxShadow:
-      "inset 0 1px $colors$slate7, inset -1px 0 $colors$slate7, inset 0 -1px $colors$slate7",
-    "&:focus-within": {
-      boxShadow:
-        "inset 0px 0px 0px 1px $colors$blue8, 0px 0px 0px 1px $colors$blue8",
-    },
-    "&:first-child": {
-      borderTopLeftRadius: "$1",
-      borderBottomLeftRadius: "$1",
-      boxShadow: "inset 0 0 0 1px $colors$slate7",
-      "&:focus-within": {
-        boxShadow:
-          "inset 0px 0px 0px 1px $colors$blue8, 0px 0px 0px 1px $colors$blue8",
-      },
-    },
-    "&:last-child": {
-      borderTopRightRadius: "$1",
-      borderBottomRightRadius: "$1",
-      boxShadow:
-        "inset 0 1px $colors$slate7, inset -1px 0 $colors$slate7, inset 0 -1px $colors$slate7",
-      "&:focus-within": {
-        boxShadow:
-          "inset 0px 0px 0px 1px $colors$blue8, 0px 0px 0px 1px $colors$blue8",
-      },
-    },
-  },
+  // [`& ${Select}`]: {
+  //   borderRadius: 0,
+  //   boxShadow:
+  //     "inset 0 1px $colors$slate7, inset -1px 0 $colors$slate7, inset 0 -1px $colors$slate7",
+  //   "&:focus-within": {
+  //     boxShadow:
+  //       "inset 0px 0px 0px 1px $colors$blue8, 0px 0px 0px 1px $colors$blue8",
+  //   },
+  //   "&:first-child": {
+  //     borderTopLeftRadius: "$1",
+  //     borderBottomLeftRadius: "$1",
+  //     boxShadow: "inset 0 0 0 1px $colors$slate7",
+  //     "&:focus-within": {
+  //       boxShadow:
+  //         "inset 0px 0px 0px 1px $colors$blue8, 0px 0px 0px 1px $colors$blue8",
+  //     },
+  //   },
+  //   "&:last-child": {
+  //     borderTopRightRadius: "$1",
+  //     borderBottomRightRadius: "$1",
+  //     boxShadow:
+  //       "inset 0 1px $colors$slate7, inset -1px 0 $colors$slate7, inset 0 -1px $colors$slate7",
+  //     "&:focus-within": {
+  //       boxShadow:
+  //         "inset 0px 0px 0px 1px $colors$blue8, 0px 0px 0px 1px $colors$blue8",
+  //     },
+  //   },
+  // },
 });

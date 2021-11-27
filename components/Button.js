@@ -341,5 +341,3 @@ export const Button =
   ((props, forwardedRef) => {
     return <StyledButton {...props} ref={forwardedRef} />;
   });
-
-Button.toString = () => `.${StyledButton.className}`;

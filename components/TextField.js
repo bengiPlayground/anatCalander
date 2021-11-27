@@ -147,5 +147,3 @@ export const TextField =
   ((props, forwardedRef) => {
     return <StyledTextField {...props} ref={forwardedRef} />;
   });
-
-TextField.toString = () => `.${StyledTextField.className}`;

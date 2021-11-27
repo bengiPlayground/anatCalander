@@ -9,7 +9,6 @@ import {
 } from "../components/Dialog/SimpleDialog";
 import BigCalander from "../components/Calander";
 import { TextField } from "../components/TextField";
-// import { Select } from "../components/Select";
 import { ControlGroup } from "../components/ControlGroup";
 import { Button } from "../components/Button";
 
@@ -48,39 +47,38 @@ export default function Calander({ treatments }) {
     setEvents(e);
   }, []);
 
-  const addEvent = async () => {
-    const res = await fetch("/api/v1/treatments", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        date: moment().format("YYYY-MM-DD hh:mm"),
-        title: "treatment",
-        patient: { first_name: "Moni", last_name: "Aploni", rate: 300 },
-        status: "sechuld",
-        hours: 1,
-      }),
-    });
+  // const addEvent = async () => {
+  //   const res = await fetch("/api/v1/treatments", {
+  //     method: "POST",
+  //     headers: {
+  //       Accept: "application/json",
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify({
+  //       date: moment().format("YYYY-MM-DD hh:mm"),
+  //       title: "treatment",
+  //       patient: { first_name: "Moni", last_name: "Aploni", rate: 300 },
+  //       status: "sechuld",
+  //       hours: 1,
+  //     }),
+  //   });
 
-    return res;
-  };
+  //   return res;
+  // };
 
-  const AddEvent = (props) => {
-    return (
-      <div style={{ width: "40vw", height: 300 }}>
-        <TextField></TextField>
-        <Select></Select>
-        <ControlGroup>
-          <Button>Button</Button>
-          <Button>Button</Button>
-          <Button>Button</Button>
-          <Button>Button</Button>
-        </ControlGroup>
-      </div>
-    );
-  };
+  // const AddEvent = (props) => {
+  //   return (
+  //     <div style={{ width: "40vw", height: 300 }}>
+  //       <TextField></TextField>
+  //       <ControlGroup>
+  //         <Button>Button</Button>
+  //         <Button>Button</Button>
+  //         <Button>Button</Button>
+  //         <Button>Button</Button>
+  //       </ControlGroup>
+  //     </div>
+  //   );
+  // };
 
   return (
     <>
