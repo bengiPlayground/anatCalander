@@ -51,16 +51,21 @@ const StyledCloseButton = styled(IconButton, {
   right: "$2",
 });
 
-export const DialogContent = React.forwardRef(
-  ({ children, ...props }, forwardedRef) => (
+export const DialogContent =
+  React.forwardRef <
+  HTMLInputElement >
+  (({ children, onClose, ...props }, forwardedRef) => (
     <StyledContent {...props} ref={forwardedRef}>
       {children}
-      <DialogPrimitive.Close as={StyledCloseButton} variant="ghost">
+      <DialogPrimitive.Close
+        as={StyledCloseButton}
+        onClick={() => onClose()}
+        variant="ghost"
+      >
         <Cross1Icon />
       </DialogPrimitive.Close>
     </StyledContent>
-  )
-);
+  ));
 
 export const DialogTrigger = DialogPrimitive.Trigger;
 export const DialogClose = DialogPrimitive.Close;
