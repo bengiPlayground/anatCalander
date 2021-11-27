@@ -82,14 +82,6 @@ export default function Calander({ treatments }) {
 
   return (
     <>
-      <Dialog open={dialogVisble}>
-        {/* <DialogContent> */}
-        {/* <p size="5" as="h6" css={{ fontWeight: 500, mb: "$3" }}>
-          Dialog Heading
-        </p>
-        <AddEvent /> */}
-        {/* </DialogContent> */}
-      </Dialog>
       <BigCalanderWrapper>
         {events && (
           <BigCalander
