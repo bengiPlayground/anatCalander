@@ -1,7 +1,7 @@
 import React from "react";
 import { styled } from "../../stitches.config";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
-// import { Cross1Icon } from "@radix-ui/react-icons";
+import { Cross1Icon } from "@radix-ui/react-icons";
 // import { overlayStyles } from "./Overlay";
 import { panelStyles } from "../Panel";
 import { IconButton } from "../IconButton";
@@ -51,21 +51,16 @@ const StyledCloseButton = styled(IconButton, {
   right: "$2",
 });
 
-export const DialogContent =
-  React.forwardRef <
-  HTMLInputElement >
-  (({ children, onClose, ...props }, forwardedRef) => (
+export const DialogContent = React.forwardRef(
+  ({ children, ...props }, forwardedRef) => (
     <StyledContent {...props} ref={forwardedRef}>
       {children}
-      <DialogPrimitive.Close
-        as={StyledCloseButton}
-        onClick={() => onClose()}
-        variant="ghost"
-      >
-        {/* <Cross1Icon /> */}
+      <DialogPrimitive.Close as={StyledCloseButton} variant="ghost">
+        <Cross1Icon />
       </DialogPrimitive.Close>
     </StyledContent>
-  ));
+  )
+);
 
 export const DialogTrigger = DialogPrimitive.Trigger;
 export const DialogClose = DialogPrimitive.Close;

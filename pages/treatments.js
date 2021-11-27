@@ -4,7 +4,7 @@ import moment from "moment";
 import { styled } from "../stitches.config";
 import {
   Dialog,
-  DialogTrigger,
+  // DialogTrigger,
   DialogContent,
 } from "../components/Dialog/SimpleDialog";
 import BigCalander from "../components/Calander";
@@ -47,49 +47,49 @@ export default function Calander({ treatments }) {
     setEvents(e);
   }, []);
 
-  // const addEvent = async () => {
-  //   const res = await fetch("/api/v1/treatments", {
-  //     method: "POST",
-  //     headers: {
-  //       Accept: "application/json",
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify({
-  //       date: moment().format("YYYY-MM-DD hh:mm"),
-  //       title: "treatment",
-  //       patient: { first_name: "Moni", last_name: "Aploni", rate: 300 },
-  //       status: "sechuld",
-  //       hours: 1,
-  //     }),
-  //   });
+  const addEvent = async () => {
+    const res = await fetch("/api/v1/treatments", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        date: moment().format("YYYY-MM-DD hh:mm"),
+        title: "treatment",
+        patient: { first_name: "Moni", last_name: "Aploni", rate: 300 },
+        status: "sechuld",
+        hours: 1,
+      }),
+    });
 
-  //   return res;
-  // };
+    return res;
+  };
 
-  // const AddEvent = (props) => {
-  //   return (
-  //     <div style={{ width: "40vw", height: 300 }}>
-  //       <TextField></TextField>
-  //       <ControlGroup>
-  //         <Button>Button</Button>
-  //         <Button>Button</Button>
-  //         <Button>Button</Button>
-  //         <Button>Button</Button>
-  //       </ControlGroup>
-  //     </div>
-  //   );
-  // };
+  const AddEvent = (props) => {
+    return (
+      <div style={{ width: "40vw", height: 300 }}>
+        <TextField></TextField>
+        {/* <ControlGroup> */}
+        <Button>Button</Button>
+        <Button>Button</Button>
+        <Button>Button</Button>
+        <Button>Button</Button>
+        {/* </ControlGroup> */}
+      </div>
+    );
+  };
 
   return (
     <>
-      {/* <Dialog open={dialogVisble}>
-        <DialogContent onClose={() => setDialogVisble(false)}>
-          <p size="5" as="h6" css={{ fontWeight: 500, mb: "$3" }}>
-            Dialog Heading
-          </p>
-          <AddEvent />
-        </DialogContent>
-      </Dialog> */}
+      <Dialog open={dialogVisble}>
+        {/* <DialogContent> */}
+        <p size="5" as="h6" css={{ fontWeight: 500, mb: "$3" }}>
+          Dialog Heading
+        </p>
+        <AddEvent />
+        {/* </DialogContent> */}
+      </Dialog>
       <BigCalanderWrapper>
         {events && (
           <BigCalander

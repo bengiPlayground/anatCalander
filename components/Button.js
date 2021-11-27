@@ -1,5 +1,5 @@
 import React from "react";
-import { styled } from "../stitches.config";
+import { styled, CSS, StitchesVariants } from "../stitches.config";
 
 const DEFAULT_TAG = "button";
 
@@ -335,9 +335,8 @@ const StyledButton = styled(DEFAULT_TAG, {
   },
 });
 
-export const Button =
-  React.forwardRef <
-  HTMLInputElement >
-  ((props, forwardedRef) => {
-    return <StyledButton {...props} ref={forwardedRef} />;
-  });
+export const Button = React.forwardRef((props, forwardedRef) => {
+  return <StyledButton {...props} ref={forwardedRef} />;
+});
+
+Button.toString = () => `.${StyledButton.className}`;

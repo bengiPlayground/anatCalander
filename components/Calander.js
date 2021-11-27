@@ -20,6 +20,7 @@ const CostumCalander = styled(Calendar, {
   // height: 500,
   fontFamily: "Rajdhani",
   // border: "1px solid $mauve6",
+
   padding: 30,
   width: "100%",
   // toolbar
@@ -28,6 +29,16 @@ const CostumCalander = styled(Calendar, {
     jc: "center",
     ai: "center",
   },
+
+  // time view
+  ".rbc-time-view": {
+    backgroundColor: "$mauve1",
+  },
+
+  ".rbc-day-slot .rbc-events-container": {
+    margin: 0,
+  },
+
   "@bp1": {
     padding: 10,
     ".rbc-toolbar": {
