@@ -1,5 +1,5 @@
 import React from "react";
-import { styled } from "../../stitches.config.ts";
+import { styled } from "../../stitches.config";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
 // import { Cross1Icon } from "@radix-ui/react-icons";
 // import { overlayStyles } from "./Overlay";

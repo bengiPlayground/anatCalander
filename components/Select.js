@@ -1,5 +1,5 @@
 import React from "react";
-import { styled, CSS } from "../stitches.config.ts";
+import { styled, CSS } from "../stitches.config";
 import { CaretSortIcon } from "@radix-ui/react-icons";
 
 const SelectWrapper = styled("div", {

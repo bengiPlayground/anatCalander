@@ -1,5 +1,5 @@
 import React from "react";
-import { styled } from "../stitches.config.ts";
+import { styled } from "../stitches.config";
 
 export default AppBar;
 

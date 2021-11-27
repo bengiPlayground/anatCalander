@@ -1,7 +1,7 @@
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
 import "react-big-calendar/lib/css/react-big-calendar.css";
-import { styled } from "../stitches.config.ts";
+import { styled } from "../stitches.config";
 import "moment/locale/he";
 
 const localizer = momentLocalizer(moment);

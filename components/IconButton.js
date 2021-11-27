@@ -1,5 +1,5 @@
 import React from "react";
-import { styled, CSS, StitchesVariants } from "../stitches.config.ts";
+import { styled, CSS, StitchesVariants } from "../stitches.config";
 
 const DEFAULT_TAG = "button";
 
