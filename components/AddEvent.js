@@ -3,7 +3,6 @@ import { styled } from "../stitches.config";
 import moment from "moment";
 
 export default function AddEvent({ params: defaultParams, toggle, isOpen }) {
-  if (!isOpen) return null;
   const [params, setParams] = useState({});
   const [startTime, setStartTime] = useState(
     moment(defaultParams.start).format("hh:mm")
