@@ -36,7 +36,7 @@ const Content = styled("div", {
   justifyContent: "center",
   // alignItems: "center",
   paddingTop: "8vh",
-  backgroundColor: "red",
+  backgroundColor: "$mauve2",
   "@bp1": {},
 });
 
