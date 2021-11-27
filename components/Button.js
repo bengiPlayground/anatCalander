@@ -1,5 +1,5 @@
 import React from "react";
-import { styled } from "../stitches.config";
+import { styled } from "../stitches.config.ts";
 
 const DEFAULT_TAG = "button";
 
@@ -63,28 +63,6 @@ const StyledButton = styled(DEFAULT_TAG, {
       },
     },
     variant: {
-      default: {
-        backgroundColor: "$loContrast",
-        boxShadow: "inset 0 0 0 1px $colors$slate7",
-        color: "$hiContrast",
-        "@hover": {
-          "&:hover": {
-            boxShadow: "inset 0 0 0 1px $colors$slate8",
-          },
-        },
-        "&:active": {
-          backgroundColor: "$blue3",
-          boxShadow: "inset 0 0 0 1px $colors$blue8",
-        },
-        "&:focus": {
-          boxShadow: "inset 0 0 0 1px $colors$slate8, 0 0 0 1px $colors$slate8",
-        },
-        '&[data-radix-popover-trigger][data-state="open"], &[data-radix-dropdown-menu-trigger][data-state="open"]':
-          {
-            backgroundColor: "$blue4",
-            boxShadow: "inset 0 0 0 1px $colors$blue8",
-          },
-      },
       gray: {
         backgroundColor: "$loContrast",
         boxShadow: "inset 0 0 0 1px $colors$slate7",
