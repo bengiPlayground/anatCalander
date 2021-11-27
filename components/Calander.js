@@ -39,6 +39,11 @@ const CostumCalander = styled(Calendar, {
     margin: 0,
   },
 
+  ".rbc-day-slot .rbc-event-content": {
+    textAlign: "right",
+    margin: 0,
+  },
+
   "@bp1": {
     padding: 10,
     ".rbc-toolbar": {
