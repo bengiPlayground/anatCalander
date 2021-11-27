@@ -2,15 +2,7 @@ import react, { useState, useEffect } from "react";
 import { connectToDatabase } from "../util/mongodb";
 import moment from "moment";
 import { styled } from "../stitches.config";
-import {
-  Dialog,
-  // DialogTrigger,
-  DialogContent,
-} from "../components/Dialog/SimpleDialog";
 import BigCalander from "../components/Calander";
-import { TextField } from "../components/TextField";
-// import { ControlGroup } from "../components/ControlGroup";
-import { Button } from "../components/Button";
 import AddEventComponent from "../components/AddEvent";
 
 const BigCalanderWrapper = styled("div", {
