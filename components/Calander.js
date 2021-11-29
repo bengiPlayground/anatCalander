@@ -13,7 +13,7 @@ const messages = {
   month: "חודש",
   week: "שבוע",
   day: "יום",
-  agenda: "אג'נדה",
+  agenda: "אופק אירועים",
 };
 
 const CostumCalander = styled(Calendar, {

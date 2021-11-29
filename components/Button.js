@@ -336,9 +336,4 @@ const StyledButton = styled(DEFAULT_TAG, {
 });
 //
 
-export const Button =
-  React.forwardRef <
-  HTMLInputElement >
-  ((props, forwardedRef) => {
-    return <StyledButton {...props} ref={forwardedRef} />;
-  });
+export const Button = StyledButton;

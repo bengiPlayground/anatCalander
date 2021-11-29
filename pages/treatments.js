@@ -17,8 +17,8 @@ const BigCalanderWrapper = styled("div", {
 
 export default function Calander({ treatments }) {
   const [events, setEvents] = useState();
+  const [selectedSlot, setSelectedSlot] = useState();
   const [params, setParams] = useState({});
-  const [date, setDate] = useState({});
   const [dialogVisble, setDialogVisble] = useState(false);
 
   useEffect(() => {
@@ -42,6 +42,7 @@ export default function Calander({ treatments }) {
         isOpen={dialogVisble}
         toggle={setDialogVisble}
         params={params}
+        selectedSlot={selectedSlot}
       />
       <BigCalanderWrapper>
         {events && (
@@ -56,7 +57,7 @@ export default function Calander({ treatments }) {
             onSelectEvent={(e) => console.log({ eventClicked: e })}
             onSelectSlot={(e) => {
               setDialogVisble(true);
-              console.log(e);
+              setSelectedSlot(e);
               setParams({
                 ...params,
                 start: moment(e.start).format("YYYY-MM-DD HH:mm"),

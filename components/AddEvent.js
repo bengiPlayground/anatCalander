@@ -1,10 +1,16 @@
 import react, { useState, useEffect } from "react";
 import { styled } from "../stitches.config";
 import moment from "moment";
+import { Button } from "./Button";
 
-export default function AddEvent({ params: defaultParams, toggle, isOpen }) {
+export default function AddEvent({
+  selectedSlot,
+  params: defaultParams,
+  toggle,
+  isOpen,
+}) {
   const [params, setParams] = useState();
-
+  console.log(selectedSlot);
   useEffect(() => {
     setParams({
       title: "טיפול",
@@ -82,8 +88,8 @@ export default function AddEvent({ params: defaultParams, toggle, isOpen }) {
     <Overlay>
       <Dialog>
         <DialogHeader>
-          <button onClick={() => insertToDB()}>שמור</button>
-          <button onClick={() => toggle(false)}>ביטול</button>
+          <Button onClick={() => toggle(false)}>ביטול</Button>
+          <Button onClick={() => insertToDB()}>שמור</Button>
         </DialogHeader>
         <DialogContent>
           <InputWrapper style={{ display: "flex" }}>
@@ -102,6 +108,7 @@ export default function AddEvent({ params: defaultParams, toggle, isOpen }) {
               type="date"
               //   value={params.start.format("YYYY-MM-DD")}
               onChange={(e) => handleDateInputChange(e, "start")}
+              style={{ border: "none" }}
             />
             <input
               type="time"
@@ -119,6 +126,9 @@ export default function AddEvent({ params: defaultParams, toggle, isOpen }) {
               value={moment(params.end).format("HH:mm")}
               onChange={(e) => handleTimeInputChange(e, "end")}
             />
+          </InputWrapper>
+          <InputWrapper>
+            <input />
           </InputWrapper>
         </DialogContent>
       </Dialog>
