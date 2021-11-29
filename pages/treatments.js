@@ -46,23 +46,23 @@ export default function Calander({ treatments }) {
       <BigCalanderWrapper>
         {events && (
           <BigCalander
+            rtl
             views={["month", "week", "day", "agenda"]}
             popup
             selectable
             defaultView="day"
             events={events}
             endAccessor="end"
-            onSelectEvent={(e) => console.log(e)}
+            onSelectEvent={(e) => console.log({ eventClicked: e })}
             onSelectSlot={(e) => {
               setDialogVisble(true);
-              setDate(e);
+              console.log(e);
               setParams({
                 ...params,
-                start: e.start,
-                end: e.end,
+                start: moment(e.start).format("YYYY-MM-DD HH:mm"),
+                end: moment(e.end).format("YYYY-MM-DD HH:mm"),
               });
             }}
-            rtl
           />
         )}
       </BigCalanderWrapper>

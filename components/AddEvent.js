@@ -3,16 +3,18 @@ import { styled } from "../stitches.config";
 import moment from "moment";
 
 export default function AddEvent({ params: defaultParams, toggle, isOpen }) {
-  const [params, setParams] = useState({});
-  const [startTime, setStartTime] = useState(
-    moment(defaultParams.start).format("hh:mm")
-  );
-  const [endTime, setEndTime] = useState(
-    moment(defaultParams.end).format("hh:mm")
-  );
-  console.log(moment(defaultParams.end).format("hh:mm"));
+  const [params, setParams] = useState();
 
-  const insertToDB = async (params) => {
+  useEffect(() => {
+    setParams({
+      title: "טיפול",
+      start: defaultParams.start,
+      end: defaultParams.end,
+      startDate: defaultParams.start,
+    });
+  }, [defaultParams]);
+
+  const insertToDB = async () => {
     console.log(params);
     const res = await fetch("/api/v1/treatments", {
       method: "POST",
@@ -24,7 +26,7 @@ export default function AddEvent({ params: defaultParams, toggle, isOpen }) {
         start: params.start,
         end: params.end,
         title: params.title,
-        patient: { first_name: "Moni", last_name: "Aploni", rate: 300 },
+        patient: { first_name: "מוני", last_name: "אלמוני", rate: 300 },
         status: "sechuld",
       }),
     });
@@ -32,59 +34,92 @@ export default function AddEvent({ params: defaultParams, toggle, isOpen }) {
     return res;
   };
 
+  const handleTimeInputChange = ({ target }, name) => {
+    const time = target.value.split(":");
+    const hour = +time[0];
+    const minute = +time[1];
+
+    if (name === "start") {
+      const startTime = moment(defaultParams.start)
+        .set({
+          hour: hour,
+          minute: minute,
+        })
+        .format("YYYY-MM-DD HH:mm");
+
+      setParams({
+        ...params,
+        start: startTime,
+      });
+    } else {
+      const endTime = moment(defaultParams.end).set({
+        hour: hour,
+        minute: minute,
+      });
+
+      setParams({
+        ...params,
+        end: endTime.format("YYYY-MM-DD HH:mm"),
+      });
+    }
+  };
+
+  const handleDateInputChange = ({ target }, name) => {
+    if (name === "start") {
+      setParams({
+        ...params,
+        startDate: target.value,
+      });
+    } else {
+      setParams({
+        ...params,
+        endtDate: target.value,
+      });
+    }
+  };
+
   return isOpen ? (
     <Overlay>
       <Dialog>
         <DialogHeader>
-          <button onClick={() => toggle(false)}>close</button>
+          <button onClick={() => insertToDB()}>שמור</button>
+          <button onClick={() => toggle(false)}>ביטול</button>
         </DialogHeader>
         <DialogContent>
-          <div style={{ display: "flex" }}>
-            title
-            <input
+          <InputWrapper style={{ display: "flex" }}>
+            <InputTitle
+              placeholder="שם"
               onChange={(e) =>
                 setParams({
                   ...params,
                   title: e.target.value,
                 })
               }
-            ></input>
-          </div>
-          <div style={{ display: "flex" }}>
-            start
+            />
+          </InputWrapper>
+          <InputWrapper>
+            <input
+              type="date"
+              //   value={params.start.format("YYYY-MM-DD")}
+              onChange={(e) => handleDateInputChange(e, "start")}
+            />
             <input
               type="time"
-              onChange={(e) => {
-                const c = e.target.value.split(":");
-                const startTime = moment(params.start).set({
-                  hour: +c[0],
-                  minute: +c[1],
-                });
-                setParams({
-                  ...params,
-                  start: startTime,
-                });
-              }}
-            ></input>
-          </div>
-          <div style={{ display: "flex" }}>
-            end
+              value={moment(params.start).format("HH:mm")}
+              onChange={(e) => handleTimeInputChange(e, "start")}
+            />
+          </InputWrapper>
+          <InputWrapper style={{ display: "flex" }}>
+            <input
+              type="Date"
+              //   value={moment(params.end).format("YYYY-MM-DD")}
+            />
             <input
               type="time"
-              onChange={(e) => {
-                const c = e.target.value.split(":");
-                const endTime = moment(params.end).set({
-                  hour: +c[0],
-                  minute: +c[1],
-                });
-                setParams({
-                  ...params,
-                  end: endTime,
-                });
-              }}
-            ></input>
-            <button onClick={() => insertToDB(params)}>save</button>
-          </div>
+              value={moment(params.end).format("HH:mm")}
+              onChange={(e) => handleTimeInputChange(e, "end")}
+            />
+          </InputWrapper>
         </DialogContent>
       </Dialog>
     </Overlay>
@@ -113,13 +148,16 @@ const Dialog = styled("div", {
   borderRadius: 5,
   padding: 5,
   "@bp1": {
-    height: "80%",
-    width: "90%",
+    height: "100%",
+    width: "100%",
   },
 });
 
 const DialogHeader = styled("div", {
   py: 5,
+  display: "flex",
+  ai: "cnetrt",
+  justifyContent: "space-between",
   "@bp1": {},
 });
 
@@ -130,4 +168,21 @@ const DialogContent = styled("div", {
   alignItems: "center",
   justifyContent: "center",
   "@bp1": {},
+});
+
+const InputWrapper = styled("div", {
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "space-between",
+  my: 10,
+  "@bp1": {
+    width: "100%",
+  },
+});
+
+const InputTitle = styled("input", {
+  "@bp1": {
+    width: "100%",
+    height: 40,
+  },
 });

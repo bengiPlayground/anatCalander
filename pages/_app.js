@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import AppBar from "../components/AppBar";
+import FullWidthResizer from "../components/Resizer";
 import { styled } from "../stitches.config";
 import "../styles/globals.css";
 
@@ -20,12 +21,12 @@ function MyApp({ Component, pageProps }) {
           rel="stylesheet"
         />
       </Head>
-      <>
+      <FullWidthResizer>
         <AppBar />
         <Content>
           <Component {...pageProps} />
         </Content>
-      </>
+      </FullWidthResizer>
     </>
   );
 }
