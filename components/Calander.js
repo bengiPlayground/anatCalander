@@ -45,7 +45,7 @@ const CostumCalander = styled(Calendar, {
   },
 
   "@bp1": {
-    padding: 10,
+    padding: 0,
     ".rbc-toolbar": {
       fd: "column",
     },

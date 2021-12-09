@@ -6,10 +6,10 @@ export default async (req, res) => {
   let response;
   switch (method) {
     case "GET":
-      response = await db.collection("treatments").find({}).toArray();
+      response = await db.collection("participants").find({}).toArray();
       break;
     case "POST":
-      response = await db.collection("treatments").insertOne(req.body);
+      response = await db.collection("participants").insertOne(req.body);
       break;
 
     default:

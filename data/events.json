@@ -1,0 +1,50 @@
+[
+    {
+        "start": "2021-12-20, 11:00",
+        "end": "2021-12-20, 12:00",
+        "patient": {
+            "fiest-name": "Dan",
+            "last-name": "Romano",
+            "rate": 300,
+            "address": "Some address 2"
+        },
+        "title": "Event Title",
+        "status": "sechuld"
+    },
+    {
+        "start": "2021-12-21, 9:00",
+        "end": "2021-12-21, 10:00",
+        "patient": {
+            "fiest-name": "Dan",
+            "last-name": "Romano",
+            "rate": 300,
+            "address": "Some address 2"
+        },
+        "title": "Event Title",
+        "status": "sechuld"
+    },
+    {
+        "start": "2021-12-20, 12:00",
+        "end": "2021-12-20, 13:00",
+        "patient": {
+            "fiest-name": "Dan",
+            "last-name": "Romano",
+            "rate": 300,
+            "address": "Some address 2"
+        },
+        "title": "Event Title",
+        "status": "sechuld"
+    },
+    {
+        "start": "2021-12-20, 19:00",
+        "end": "2021-12-20, 20:00",
+        "patient": {
+            "fiest-name": "Dan",
+            "last-name": "Romano",
+            "rate": 300,
+            "address": "Some address 2"
+        },
+        "title": "Event Title",
+        "status": "sechuld"
+    }
+]

@@ -1,0 +1,26 @@
+[
+    {
+        "fiest-name": "Dan",
+        "last-name": "Romano",
+        "rate": 300,
+        "address": "Some address 1"
+    },
+    {
+        "fiest-name": "Dan",
+        "last-name": "Romano",
+        "rate": 300,
+        "address": "Some address 2"
+    },
+    {
+        "fiest-name": "Dan",
+        "last-name": "Romano",
+        "rate": 200,
+        "address": "Some address 3"
+    },
+    {
+        "fiest-name": "Dan",
+        "last-name": "Romano",
+        "rate": 250,
+        "address": "Some address 4"
+    }
+]
